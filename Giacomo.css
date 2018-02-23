@@ -23,9 +23,9 @@ h1 {
  color: white;
 }
 
-button {
-
-
+.goButton {
+ height:50px;
+ width: 50px;
 }
 
 img {
@@ -42,8 +42,8 @@ img {
 	display: inline-block;
 }
 
-.Repl {
+a {
 	list-style-type: none;
-	text-decoration-style: none;
+	text-decoration: none;
 	color: white;
 }
