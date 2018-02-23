@@ -1,0 +1,49 @@
+body {
+	background-color: #A3042D;
+	background-image: url("MedievalBorder.png");
+	background-repeat: none;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+h2{
+ padding-top: 15px;
+ color: white;
+
+}
+
+h1 {
+ padding-top: 45px;
+ color: white;
+}
+
+button {
+
+
+}
+
+img {
+	height: 50px;
+	width: 50px;
+	display: 
+}
+
+.Linkedin {
+	display: inline-block;
+}
+
+.Github {
+	display: inline-block;
+}
+
+.Repl {
+	list-style-type: none;
+	text-decoration-style: none;
+	color: white;
+}

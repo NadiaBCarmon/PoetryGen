@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poetry Generator: Giacomo da Lentini</title>
+
+	<link rel="stylesheet" href="Giacomo.css">
+	<style type="text/css"></style>
+</head>
+<body>
+
+
+	<center><h1>Poetry Generator: Giacomo da Lentini</h1></center>
+	<br/>
+	<br/>
+	<center><h2>English:</h2></center>
+	<center><h1 id="English"></h1></center>
+	<center><h2>Italiano:</h2></center>
+	<center><h1 id="Italiano"></h1></center>
+	<center><button onclick="buttonOnClick()">Vai</button></center>
+	<br />
+
+	<center><a href="https://repl.it/@nadiacarmon/PoemGenerator" id="Repl">Repl.it</a>
+		<br />
+		<br />
+	<center><a href="https://www.linkedin.com/in/nadiacarmon/""><img src="Linkedin.svg" id="Linkedin"></a></center>
+		<br />
+	<center><a href="https://github.com/NadiaBCarmon"><img src="Github.png" id="Github"></a></center>
+
+
+	<script type="text/javascript">
+
+		//repl.it, Linkedin, original poem
+
+		//Create 2 arrays with the poem in its original Italian and English
+		
+		var sonnet = [" A man who ", " has never ", " seen ", " fire ", " (before) would never think ", "that ", " it could burn ", " rather ", " would strike him ", " as a delight ", " and ", " great fun ", " its splendor ", " when ", " he first saw it ", " if he ", " (ever) touched it ", " anywhere ", " then ", " it ", " would seem ", " to him it burned ", " (and) bad ", " the one ", " (that belongs) to Love ", " has touched me ", " a little ", " a lot ", " it burns me ", " God ", " if it only took hold! ", " If it only took hold ", " in you ", " my lady ", " who ", " make me ", " think you mean to comfort me ", " by loving me ", " and you ", " (you) give me ", " (only) distress ", " and torments ", " certainly ", " Love ", " acts ", " ignobly ", " for he does not tie you down ", " who ", " come forth ", " only with words ", " to me ", " I serve ", " Yet he gives me no ", " happiness "];
+
+		var sonetto = [" Chi ", " non avesse mai ", " veduto ", " foco ", " no crederia ", " che ", " cocere potesse ", " anti ", " li sembraria ", " sollazzo ", " e ", " gioco ", " lo so isprendore ", " quando ", " lo vedesse ", " s'ello ", " lo toccasse ", " in alcun loco ", " ben ", " li ", " sembrara ", " cocesse ", " che forte ", " (q)uello ", " d'amore ", " m'à toccato ", " un poco ", " molto", " me coce ", " Deo ", " che s'apprendesse! ", " che s'apprendesse ", " in voi ", " madonna mia ", " che ", " mi mostrate ", " dar sollazzo ", " amando ", " e voi ", " mi date ", " pur pen' ", " e tormento ", " certo ", " l'Amore ", " fa ", " gran villania ", " che no distringe te ", " che ", " vai ", " gabando ", " a me ", " che servo ", " non dà "," isbaldimento "];
+
+ 
+		//Create a for loop to access both var sonnet and var sonetto//
+
+		//Assign object with values from 
+		//object + key pairs 
+
+
+			//--------------------------------------//
+			//Markov Chain Function for var sonnet//
+			function poem(sonnet){
+			    
+				     var wordPairs = {};
+			    //console.log(wordPairs.corpus);
+			    
+			    for(var i=0; i<sonnet.length - 1; i++){
+			      var key = sonnet[i];
+			      var value = sonnet[i + 1];
+			      
+			      wordPairs[key] = [value];
+			      console.log(wordPairs);
+			    }//end of for loop//
+				    return wordPairs;
+			}//end of function poem//
+
+			poem(sonnet);
+			var markovChainEng = poem(sonnet);
+
+			//--------------------------------------//
+
+			//--------------------------------------//
+			//Markov Chain Function for var sonetto//
+			function poem(sonetto){
+			    
+				
+			    var wordPairs = {};
+			    
+			    for(var i=0; i<sonetto.length - 1; i++){
+			      var key = sonetto[i];
+			      var value = sonetto[i + 1];
+			      
+			      	wordPairs[key] = [value];
+			    }//end of for loop//
+				    return wordPairs;
+			}//end of function//
+
+			poem(sonetto);
+			var markovChainIta = poem(sonetto);
+
+			//----------------------------------------//
+
+			//WriteLine function for var sonnet//
+
+			function writeLine(markovChain, n){
+				var markovChainEng = poem(sonnet);
+				var markovChainIta = poem(sonetto);
+
+				//n is the length of words//
+				for(var i=0; i<n; i++){
+
+				var random = parseInt(Math.random()*Object.values(markovChainEng).length);
+
+				
+				document.getElementById('English').innerHTML +=  Object.values(markovChainEng)[random][0];
+				document.getElementById('Italiano').innerHTML +=  Object.values(markovChainIta)[random][0];
+
+				//document.getElementById("English").addEventListener("click", writeLine('markovChain', 'n'));
+				//document.getElementById("Italiano").addEventListener("click", writeLine);
+
+				//console.log(Object.values(markovChain)[random][0]);	
+
+				}
+			}
+			
+			//writeLine(markovChainEng, 3);
+			//writeLine(markovChainIta, 3);
+
+			//--------------------------------------//
+
+			  function buttonOnClick(){
+			    writeLine(markovChainEng, 3);
+			    writeLine(markovChainIta, 3);
+			 }
+
+			
+			//------------------------------------------//
+
+
+
+
+	</script>
+
+</body>
+</html>
